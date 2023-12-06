@@ -100,7 +100,7 @@ func loggingin(c *gin.Context) {
 			fmt.Println(err)
 			return
 		}
-		c.JSON(http.StatusOK, gin.H{"message": "Login successful"})
+		c.JSON(http.StatusOK, gin.H{"message": "Login successful", "sid": session.Get("user")})
 		return
 	}
 
